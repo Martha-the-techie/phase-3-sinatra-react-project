@@ -1,3 +1,5 @@
+require 'faker'
+
 puts "🌱 Seeding cakes..."
 
 20.times do
@@ -19,21 +21,18 @@ Creation.create({name: "Pinacolada & Cherry Cake", description: "Pina in a slice
 
 
 
-# cakes = Cake.create(
-    # name: "Chocolate",
-    # description: "moist chocolate cake with whipped butter cream topped with freshly picked strawberry",
-    # image_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftasty.co%2Frecipe%2Fthe-ultimate-chocolate-cake&psig=AOvVaw24a67JKZT6AXHNNX7Kn56v&ust=1686314170643000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCOj5kYHYs_8CFQAAAAAdAAAAABAD",
-    # price: "$67",
-    # quantity: 2
-# )
-
-
-
 puts "🌱 Seeding reviews..."
 
-reviews = Reviews.create(
-    name: "Qlynn",
-    description: "Yummy, moist and thank you so much for your customer servoce. It was honestly topnotch. Definitely coming back!",
-    rating: 5
-)
+10.timed do
+    Reviews.create({username: Faker::Name.first_name, password: Faker::Name.last_name})
+end
+
+Reviews.create({name: "Aideen", description: "Top-notch service. I will be going back for the Fruity goodness a hundred times more.", rating: 5})
+Reviews.create({name: "Chana", description: "The sparkling kiwi has to be my favorite find this year. Such a sweet exotic and healthy cake!", rating: 5})
+Reviews.create({name: "Alissa", description: "Vegans need to arise and experience what is definititly the sweetest carrot cake on earth. I don't know how she is sweet every single time.", rating: 5})
+Reviews.create({name: "Stag", description: "It's the Blueberry one for me for sure. What is in this thing. A million star rating please", rating: 5})
+
+
+
+
 puts "✅ Done seeding!"
