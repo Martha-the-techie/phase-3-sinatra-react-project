@@ -13,6 +13,8 @@ GEM
       tzinfo (~> 2.0)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -62,6 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  faker
   pry (~> 0.14.1)
   puma
   rack
